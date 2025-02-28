@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<div class="hidden lg:flex lg:w-auto">
+  <ul class="flex items-center gap-x-7">
+    <li *ngFor="let item of menuItems">
+      <a
+        [routerLink]="[item.link]"
+        [fragment]="item.fragment"
+        (click)="setActiveLink(item.fragment)"
+        [ngClass]="{
+          'text-primaryColor': activeLink === item.fragment
+        }"
+        class="relative text-gray-800 text-xl hover:text-primaryColor cursor-pointer"
+        >{{ item.title }}
+      </a>
+    </li>
+  </ul>
+</div>
+<!---->

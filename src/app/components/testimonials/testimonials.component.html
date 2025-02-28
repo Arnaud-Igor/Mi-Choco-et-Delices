@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<section class="container my-24" id="avis-clients">
+  <div class="max-w-screen-lg mx-auto">
+    <h1 class="mb-8 text-3xl sm:text-center lg:text-4xl font-extrabold text-gray-900">
+      Quelques avis de nos clients
+    </h1>
+    <div id="default-carousel" class="relative w-full" data-carousel="static">
+      <!-- Carousel wrapper -->
+      <div class="relative h-72 overflow-hidden rounded-xl bg-gray-100">
+        <!-- Items -->
+        <div *ngFor="let item of testimonialItems" class="hidden duration-1000 ease-in-out" data-carousel-item>
+          <figure
+            class="container lg:container-fluid max-w-screen-md mx-auto absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          >
+            <svg
+              class="h-12 mx-auto mb-3 text-gray-400"
+              viewBox="0 0 24 27"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                fill="currentColor"
+              />
+            </svg>
+            <blockquote class="md:container lg:container-fluid text-center">
+              <p
+                class="text-sm sm:text-lg font-medium text-gray-900 md:text-xl"
+              >
+                {{item.testimonial}}
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center justify-center mt-6 space-x-3">
+              <img
+                class="sm:size-6 size-8 rounded-full"
+                [src]="item.profilePicture"
+                alt="profile"
+              />
+              <div
+                class="flex flex-col gap-2 sm:gap-0 sm:flex-row items-center sm:divide-x-2 divide-x-0 divide-gray-500"
+              >
+                <div class="pr-3 font-medium text-gray-900">
+                  {{item.witnessName}}
+                </div>
+                <div
+                  class="pl-3 text-sm font-light text-gray-500"
+                >
+                  {{item.workTitle}}
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div
+        class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+      >
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="true"
+          aria-label="Slide 1"
+          data-carousel-slide-to="0"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 2"
+          data-carousel-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 3"
+          data-carousel-slide-to="2"
+        ></button>
+        <button
+          type="button"
+          class="w-3 h-3 rounded-full"
+          aria-current="false"
+          aria-label="Slide 4"
+          data-carousel-slide-to="3"
+        ></button>
+      </div>
+      <!-- Slider controls -->
+      <button
+        type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primaryColor/30 lg:bg-primaryColor group-hover:bg-primaryColor/50 lg:group-hover:bg-primaryColor/70 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 1 1 5l4 4"
+            />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primaryColor/30 lg:bg-primaryColor group-hover:bg-primaryColor/50 lg:group-hover:bg-primaryColor/70 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+        >
+          <svg
+            class="w-4 h-4 text-white rtl:rotate-180"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 6 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 9 4-4-4-4"
+            />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+<!---->

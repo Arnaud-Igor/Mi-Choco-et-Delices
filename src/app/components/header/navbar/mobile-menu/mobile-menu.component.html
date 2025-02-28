@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<div class="container overflow-hidden bg-transparent">
+  <ul
+    class="flex flex-col rounded-xl overflow-hidden border border-gray-200 bg-white"
+  >
+    <li
+      *ngFor="let item of menuItems"
+      class="overflow-hidden border-b border-gray-200"
+    >
+      <a
+        (click)="onCloseMenu()"
+        [routerLink]="[item.link]"
+        (click)="setActiveLink(item.fragment)"
+        [fragment]="item.fragment"
+        [ngClass]="{
+          'bg-primaryColor text-white': activeLink === item.fragment
+        }"
+        class="text-gray-700 hover:text-white hover:bg-primaryColor block text-center py-3 text-xl cursor-pointer"
+        >{{ item.title }}</a
+      >
+    </li>
+  </ul>
+</div>
+<!---->
